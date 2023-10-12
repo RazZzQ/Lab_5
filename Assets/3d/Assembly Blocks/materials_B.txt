@@ -1,0 +1,108 @@
+AssemblyBlockPlanet0607b:whitenut_v
+===================================
+  Textures:
+    - whitenuti
+
+  Ambient Colors:
+    - 100, 100, 100, 195
+
+  Constant Colors:
+    - 0, 0, 0, 180
+
+  Material Colors:
+    - 203, 203, 203, 255
+    - 203, 203, 203, 255
+
+  Color Registers:
+    - 246, 157, 72, 0
+    - 0, 0, 0, 368
+
+  Steps:
+    1: RGB = ((246, 157, 72) * (vertex RGB))
+         A = (lerp from 180 to 0 using (vertex A)), multiply by 2
+    2: RGB = ((prev. RGB) * (tex #1 RGB)), then add (prev. A)
+         A = ((vertex A) * (tex #1 A))
+
+
+
+coreA_v
+=======
+  Textures:
+    - IP2_glow1_i
+    - IndBendLittleRiver
+        Scale: 0.5, 0.5
+    - IP2V_sanenv1
+
+  Ambient Colors:
+    - 100, 100, 100, 195
+
+  Constant Colors:
+    - 0, 0, 0, 255
+
+  Material Colors:
+    - 240, 240, 240, 255
+    - 240, 240, 240, 255
+
+  Color Registers:
+    - 121, 238, 214, 190
+    - 16, 97, 80, 262
+
+  Steps:
+    1: RGB = (lerp from (121, 238, 214) to (16, 97, 80) using (tex #1 RGB)), subtract 127
+         A = ((tex #1 A) * (vertex A))
+    2: RGB = ((tex #3 RGB) * (vertex RGB)), then add (prev. RGB)
+         A = (vertex A)
+
+
+
+coreE_v
+=======
+  Textures:
+    - IP2_glow1_i
+    - RailBlockBig_Stone
+        Scale: 0.05000000074505806, 0.05000000074505806
+    - IP2V_sanenv1
+
+  Ambient Colors:
+    - 100, 100, 100, 195
+
+  Constant Colors:
+    - 0, 0, 0, 180
+
+  Material Colors:
+    - 240, 240, 240, 255
+    - 240, 240, 240, 255
+
+  Color Registers:
+    - 220, 70, 70, 190
+    - 255, 255, 255, 262
+
+  Steps:
+    1: RGB = (lerp from (220, 70, 70) to (255, 255, 255) using (tex #1 RGB))
+         A = (lerp from 180 to 0 using (vertex A)), multiply by 2
+    2: RGB = ((vertex RGB) * (prev. RGB)), then add (prev. A)
+         A = ((tex #3 A) * (vertex A))
+
+
+
+crystal_v
+=========
+  Textures:
+    - HighLight00
+
+  Ambient Colors:
+    - 100, 100, 100, 195
+
+  Constant Colors:
+    - 0, 69, 46, 85
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Color Registers:
+    - 8, 16, 20, 255
+
+  Steps:
+    1: RGB = (lerp from (8, 16, 20) to (tex #1 RGB) using (vertex RGB)), then add (0, 69, 46), multiply by 2
+         A = ((tex #1 A) * (vertex A)), then add 85, divide by 2
